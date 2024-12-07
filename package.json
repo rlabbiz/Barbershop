@@ -1,0 +1,16 @@
+{
+  "name": "barbershop",
+  "version": "1.0.0",
+  "description": "a barbershop website of ...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "satrt": "node server.js"
+  },
+  "type": "module",
+  "author": "Rida Labbiz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
