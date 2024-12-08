@@ -1,21 +1,21 @@
+import asyncHandler from 'express-async-handler';
+
 //@desc Create a new contact
 //@route POST /api/contacts
 //@access Public
-export const createContact = async (req, res) => {
+export const createContact = asyncHandler(async (req, res) => {
     const { name, email, phone, type } = req.body;
 
     // Check if the fields are empty
-    console.log(type)
     if (!name || !email || !phone || !type) {
-        return res.status(400).json({
-            error: 'Please enter all fields'
-        });
+        res.status(400);
+        throw new Error('Please fill in all fields');
     }
 
     res.status(200).json({
         message: 'Contact created'
     });
-}
+})
 
 // @desc Get all contacts
 // @route GET /api/contacts
